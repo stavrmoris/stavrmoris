@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Заметки</title>
+    <link rel="icon" href="{% static 'todo/logo.svg' %}">
+    <link rel="stylesheet" href="{% static 'todo/style.css' %}">
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>To-Do List</h1>
+    </div>
+    <div class="input-area">
+        <input type="text" id="in1" placeholder="Enter the task...">
+        <button id="b">Create</button>
+    </div>
+    <ul id="uwu">
+        <!-- Dynamically adding elements -->
+    </ul>
+</div>
+<div class="footer-icons">
+    <a href="https://github.com/stavrmoris" target="_blank">
+        <img src="{% static 'todo/github.svg' %}" alt="GitHub" class="icon">
+    </a>
+    <a href="https://t.me/stavrmoris" target="_blank">
+        <img src="{% static 'todo/tg.svg' %}" alt="Telegram" class="icon">
+    </a>
+</div>
+<p class="username">created by <span class="name">@stavrmoris</span></p>
+<script src="{% static 'todo/base.js' %}"></script>
+</body>
+</html>

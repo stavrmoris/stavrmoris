@@ -1,0 +1,148 @@
+body, html {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(#2b5876, #4e4376);
+    color: #ffffff;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    width: 35vw; /* Измените ширину на желаемое значение */
+    max-width: 100%;
+}
+
+input {
+    font-size: 24px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    outline: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.currency {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: calc(10px + 0.1vw);
+    margin: 20px 0;
+}
+
+.currency-select {
+    font-size: calc(2px + 1vw);
+    padding: calc(5px + 0.6vw);
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    appearance: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.currency-select:hover, .currency-select:focus {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+::placeholder {
+    color: #4e4376;
+}
+
+option {
+    color: #4e4376;
+    text-align: center;
+    background: #ec9aff;
+}
+
+.container h1 {
+    font-size: 28px;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+h1#result {
+    text-align: center;
+    font-size: 48px;
+    color: #ffd700;
+    margin-top: 40px;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+h1#result:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.username {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #e0e0e0;
+}
+
+.name {
+    color: #9cf3ff;
+}
+
+@media (max-width: 1200px) {
+    .currency{
+        flex-direction: column;
+    }
+
+    .container {
+        width: 60vw;
+    }
+
+    input {
+        font-size: 24px;
+    }
+
+    .currency-select {
+        font-size: calc(20px + 0.6vw);
+        padding: calc(10px + 0.6vw);
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    h1#result {
+        font-size: 48px;
+    }
+
+    .username {
+        font-size: 17px;
+    }
+
+    .name {
+        color: pink;
+    }
+}

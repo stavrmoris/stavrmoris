@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stavr Moris - Portfolio</title>
+    <link rel="icon" href='{% static 'main_page/img/logo.png' %}'>
+    <link rel="stylesheet" href="{% static 'main_page/css/style.css' %}">
+</head>
+<body>
+    <div class="slider-thumb"></div>
+
+    <div class="card">
+        <div class="content">
+            <h1>Stavr Moris</h1>
+            <p class="profession">
+                Fullstack Developer, Gamedev, Python Scripts & Bots
+            </p>
+            <p class="description">
+                Hi! I'm a Fullstack Developer specializing in Game Development, Python scripts, and bot creation. 
+                With extensive experience in building complex web applications, game mechanics, and automation with 
+                Python, I bring ideas to life by combining creativity and technical expertise. My goal is to craft 
+                solutions that not only work efficiently but also provide a delightful user experience. Whether it's 
+                a game, a web platform, or an automation tool, I'm here to help make your project stand out and succeed.
+            </p>
+        </div>
+    </div>
+
+    <div class="projects">
+        {% for post in posts %}
+            <a href="{{ post.link }}" class="project-link">
+                <div class="project">
+                    <h2>{{ post.title }} <img src="{% static 'main_page/img/open.svg' %}" alt="icon" class="icon"></h2>
+                    <p>{{ post.description }}</p>
+                    <p class="date">{{ post.date }}</p>
+                    <div class="stack">
+                        {% for hashtag in post.hashtags.all %}
+                            <span>#{{ hashtag.name }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+    
+    <div class="footer-icons">
+        <a href="https://github.com/stavrmoris" target="_blank">
+            <img src="{% static 'todo/github.svg' %}" alt="GitHub" class="icon">
+        </a>
+        <a href="https://t.me/stavrmoris" target="_blank">
+            <img src="{% static 'todo/tg.svg' %}" alt="Telegram" class="icon">
+        </a>
+    </div>
+</body>
+</html>

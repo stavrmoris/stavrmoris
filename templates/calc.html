@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Exchange Calculator</title>
+    <link rel="icon" href="{% static 'calc/logo.svg' %}">
+    <link rel="stylesheet" href="{% static 'calc/style.css' %}">
+</head>
+<body>
+
+<h1>Currency Exchange Calculator</h1>
+
+<div class="container">
+    <input type="text" id="countValue" placeholder="Enter amount...">
+
+    <div class="currency">
+        <select id="fromCurrency" class="currency-select">
+            <option value="USD" selected>USD - United States Dollar</option>
+            <option value="EUR">EUR - Euro</option>
+            <option value="GBP">GBP - British Pound</option>
+            <option value="JPY">JPY - Japanese Yen</option>
+            <option value="AUD">AUD - Australian Dollar</option>
+            <option value="CAD">CAD - Canadian Dollar</option>
+            <option value="CHF">CHF - Swiss Franc</option>
+            <option value="CNY">CNY - Chinese Yuan</option>
+            <option value="RUB">RUB - Russian Ruble</option>
+            <option value="INR">INR - Indian Rupee</option>
+        </select>
+        <h1>TO</h1>
+        <select id="toCurrency" class="currency-select">
+            <option value="USD">USD - United States Dollar</option>
+            <option value="EUR" selected>EUR - Euro</option>
+            <option value="GBP">GBP - British Pound</option>
+            <option value="JPY">JPY - Japanese Yen</option>
+            <option value="AUD">AUD - Australian Dollar</option>
+            <option value="CAD">CAD - Canadian Dollar</option>
+            <option value="CHF">CHF - Swiss Franc</option>
+            <option value="CNY">CNY - Chinese Yuan</option>
+            <option value="RUB">RUB - Russian Ruble</option>
+            <option value="INR">INR - Indian Rupee</option>
+        </select>
+    </div>
+
+    <h1 id="result">0.00</h1>
+</div>
+<p class="username">created by <span class="name">@stavrmoris</span></p>
+<script src="{% static 'calc/index.js' %}"></script>
+</body>
+</html>
