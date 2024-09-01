@@ -1,17 +1,41 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stavr Moris - Portfolio</title>
-    <link rel="icon" href='{% static 'main_page/img/logo.png' %}'>
+    <link rel="icon" href="{% static 'main_page/img/logo.png' %}">
     <link rel="stylesheet" href="{% static 'main_page/css/style.css' %}">
 </head>
-<body>
-    <div class="slider-thumb"></div>
 
+<body>
+    <!-- Блок с фоновыми градиентами и svg фильтрами для визуальных эффектов -->
+    <div class="gradient-bg">
+        <svg xmlns="http://www.w3.org/2000/svg" class="svgBlur">
+            <defs>
+                <!-- Фильтр "goo" для создания плавных анимаций -->
+                <filter id="goo">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                    <feColorMatrix in="blur" mode="matrix"
+                        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+                    <feBlend in="SourceGraphic" in2="goo" />
+                </filter>
+            </defs>
+        </svg>
+        <!-- Контейнер для градиентов (блобов) -->
+        <div class="gradients-container">
+            <div class="g1"></div>
+            <div class="g2"></div>
+            <div class="g3"></div>
+            <div class="g4"></div>
+            <div class="g5"></div>
+            <div class="interactive"></div>
+        </div>
+    </div>
+
+    <!-- Карточка с информацией о пользователе -->
     <div class="card">
         <div class="content">
             <h1>Stavr Moris</h1>
@@ -19,32 +43,35 @@
                 Fullstack Developer, Gamedev, Python Scripts & Bots
             </p>
             <p class="description">
-                Hi! I'm a Fullstack Developer specializing in Game Development, Python scripts, and bot creation. 
-                With extensive experience in building complex web applications, game mechanics, and automation with 
-                Python, I bring ideas to life by combining creativity and technical expertise. My goal is to craft 
-                solutions that not only work efficiently but also provide a delightful user experience. Whether it's 
-                a game, a web platform, or an automation tool, I'm here to help make your project stand out and succeed.
+                Hi! I'm a Fullstack Developer specializing in Game Development, Python scripts, and bot creation.
+                With extensive experience in building complex web applications, game mechanics, and automation with Python,
+                I bring ideas to life by combining creativity and technical expertise. My goal is to craft solutions that
+                not only work efficiently but also provide a delightful user experience. Whether it's a game, a web platform,
+                or an automation tool, I'm here to help make your project stand out and succeed.
             </p>
         </div>
     </div>
 
+    <!-- Секция с проектами, генерируемая через Django шаблон -->
     <div class="projects">
         {% for post in posts %}
-            <a href="{{ post.link }}" class="project-link">
-                <div class="project">
-                    <h2>{{ post.title }} <img src="{% static 'main_page/img/open.svg' %}" alt="icon" class="icon"></h2>
-                    <p>{{ post.description }}</p>
-                    <p class="date">{{ post.date }}</p>
-                    <div class="stack">
-                        {% for hashtag in post.hashtags.all %}
-                            <span>#{{ hashtag.name }}</span>
-                        {% endfor %}
-                    </div>
+        <a href="{{ post.link }}" class="project-link">
+            <div class="project">
+                <h2>{{ post.title }} <img src="{% static 'main_page/img/open.svg' %}" alt="icon" class="icon"></h2>
+                <p>{{ post.description }}</p>
+                <p class="date">{{ post.date }}</p>
+                <!-- Список технологий и тегов, используемых в проекте -->
+                <div class="stack">
+                    {% for hashtag in post.hashtags.all %}
+                    <span>#{{ hashtag.name }}</span>
+                    {% endfor %}
                 </div>
-            </a>
+            </div>
+        </a>
         {% endfor %}
     </div>
-    
+
+    <!-- Иконки социальных сетей -->
     <div class="footer-icons">
         <a href="https://github.com/stavrmoris" target="_blank">
             <img src="{% static 'todo/github.svg' %}" alt="GitHub" class="icon">
@@ -53,5 +80,8 @@
             <img src="{% static 'todo/tg.svg' %}" alt="Telegram" class="icon">
         </a>
     </div>
+
+    <script src="{% static 'main_page/js/blobs.js' %}"></script>
 </body>
+
 </html>
