@@ -1,4 +1,4 @@
-# Hi, I'm Stavr Mariskin 👋
+# Hi, I'm Stavr Moris 👋
 
 **Junior ML / AI Engineer**  
 First-year student at Novosibirsk State University. Interested in applied machine learning, LLM systems, RAG, AI agents, model evaluation, and inference.
