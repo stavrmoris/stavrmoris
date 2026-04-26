@@ -40,8 +40,8 @@ My current interests include:
 
 ## Achievements
 
-- 2nd place in the Avito track at **IT Purple Hack 2026**
-- 3rd place in the Sber track with a GigaChat hallucination detection solution
+- 2rd place in the Sber track with a GigaChat hallucination detection solution
+- 3nd place in the Avito track at **IT Purple Hack 2026**
 - 3rd place at **Cloud.ru Hackathon**
 - 3rd place at **T1 Hackathon**
 
