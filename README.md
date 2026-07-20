@@ -1,7 +1,7 @@
 # Hi, I'm Stavr Moris 👋
 
-**Junior ML / AI Engineer**  
-First-year student at Novosibirsk State University. Interested in applied machine learning, LLM systems, RAG, AI agents, model evaluation, and inference.
+**ML / AI Engineer**  
+Student at Novosibirsk State University. Interested in applied machine learning, LLM systems, RAG, AI agents, model evaluation, and inference.
 
 **Languages:** [English](README.md) · [Русский](README.ru.md) · [中文](README.zh.md)
 
