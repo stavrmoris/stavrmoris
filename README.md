@@ -1,309 +1,163 @@
-# Hi, I'm Stavr Moris 👋
+<h1 align="center">Hi, I'm Stavr Mariskin 👋</h1>
 
-**ML / AI Engineer**  
-Student at Novosibirsk State University. Interested in applied machine learning, LLM systems, RAG, AI agents, model evaluation, and inference.
+<p align="center">
+  <strong>AI/ML researcher and engineer focused on reliable LLM and agent systems.</strong>
+</p>
 
-**Languages:** [English](README.md) · [Русский](README.ru.md) · [中文](README.zh.md)
+<p align="center">
+  I build real AI systems, study where their apparent reliability breaks,
+  and design evaluation pipelines that make their failures measurable.
+</p>
 
----
+<p align="center">
+  <a href="README_RU.md">Русский</a>
+  ·
+  <a href="README_ZH.md">中文</a>
+  ·
+  <a href="https://github.com/stavrmoris">GitHub</a>
+  ·
+  <a href="https://t.me/stavrmoris">Telegram</a>
+  ·
+  <a href="mailto:s.mariskin@g.nsu.ru">Email</a>
+</p>
 
-## About me
-
-I am developing in the field of **Machine Learning / AI Engineering** and focus on projects where ML models or LLM-based systems are placed into a clear engineering context: with quality evaluation, API, demo interface, reproducible launch, and documentation.
-
-My current interests include:
-
-- hallucination detection and LLM evaluation;
-- RAG and agentic workflows;
-- applied ML for real-world tasks;
-- time-series forecasting;
-- inference and running models in constrained environments;
-- computer vision and image processing.
-
----
-
-## Tech Stack
-
-### ML / Data Science
-`Python` `PyTorch` `CatBoost` `scikit-learn` `Logistic Regression` `PCA` `TF-IDF` `LSTM` `feature engineering`
-
-### LLM / RAG / Agents
-`LangGraph` `LangChain` `ChromaDB` `Ollama` `Qwen` `GigaChat API` `OpenRouter` `MCP` `RAG` `embeddings` `reranking`
-
-### Backend / Tools
-`FastAPI` `Django` `Django REST Framework` `Docker` `Docker Compose` `pytest` `Git` `Linux`
-
-### CV / Low-level / Edge AI
-`C` `image processing` `TensorFlow.js` `ONNX Runtime` `ARM64 Linux` `NPU inference`
+<p align="center">
+  <img src="https://img.shields.io/badge/Focus-Reliable_AI-2563EB?style=flat-square">
+  <img src="https://img.shields.io/badge/Research-LLM_%26_Agent_Evaluation-7C3AED?style=flat-square">
+  <img src="https://img.shields.io/badge/Engineering-Python_%7C_PyTorch_%7C_FastAPI-0891B2?style=flat-square">
+</p>
 
 ---
 
-## Achievements
+## 🧭 About me
 
-- 2rd place in the Sber track with a GigaChat hallucination detection solution
-- 3nd place in the Avito track at **IT Purple Hack 2026**
-- 3rd place at **Cloud.ru Hackathon**
-- 3rd place at **T1 Hackathon**
+I am a second-year **Applied AI** student at Novosibirsk State University and an AI/ML engineer working across research and production-oriented systems.
 
----
+My current focus is **reliable AI**:
 
-## Key Projects
+- factual hallucination detection;
+- evaluation of LLM agents;
+- evidence grounding and safe abstention;
+- shortcut learning and distribution shift;
+- reproducible applied ML research.
 
-### Guardian of Truth — GigaChat Hallucination Detection
+Across my main projects, I study the same underlying problem:
 
-**Repository:** [Ultramind-67/purple_hack_sber](https://github.com/Ultramind-67/purple_hack_sber)
-
-A competitive ML solution for detecting factual hallucinations in GigaChat answers.  
-The approach does not rely on external LLM-as-a-judge methods or RAG. Instead, it analyzes internal model signals.
-
-Used in the project:
-
-- hidden-state probing;
-- teacher forcing;
-- contrast directions;
-- PCA-compressed representations;
-- uncertainty features from logits;
-- lightweight Logistic Regression classifier.
-
-**Results:**
-
-- 3rd place in the Sber track;
-- public PR-AUC: 0.8493;
-- private PR-AUC: around 0.8541.
-
-**Stack:** Python, PyTorch, scikit-learn, PCA, Logistic Regression, GigaChat, hidden-state features.
+> **Why do AI systems often look more reliable than they really are, and how can we evaluate them honestly?**
 
 ---
 
-### Avito Split Detector — Hybrid ML Service for Ad Classification
+## 🔬 Selected research projects
 
-**Repository:** [Ultramind-67/avito_hack_solution](https://github.com/Ultramind-67/avito_hack_solution)
+<table>
+<tr>
+<td width="33%" valign="top">
 
-A hackathon solution for an Avito case: the system determines when a repair-service ad should be split into several separate service ads and can optionally generate draft ads.
+### 🛡️ [Guardian of Truth](https://github.com/stavrmoris/Guardian-of-Truth)
 
-Solution architecture:
+**Detecting factual hallucinations from internal LLM representations.**
 
-- rule-based microcategory detector;
-- TF-IDF text features;
-- hand-crafted meta-features;
-- CatBoost classifier;
-- FastAPI API;
-- optional LLM-based draft generation via OpenRouter;
-- fallback mode without an external LLM API.
+A white-box approach based on hidden-state probing, contrast directions, uncertainty signals, PCA, and a lightweight linear classifier.
 
-**Results:**
+**Highlights**
 
-- 2nd place in the track;
-- historical hold-out F1: 0.70;
-- Precision: 0.81 for the Split class.
+- 174 internal and uncertainty features
+- historical public dev PR-AUC: **0.8541**
+- no external LLM judge required
+- reproducible public research package
 
-**Stack:** Python, CatBoost, scikit-learn, TF-IDF, FastAPI, OpenRouter, pytest.
+</td>
+<td width="33%" valign="top">
 
----
+### 🔎 [ProcureTrace](https://github.com/stavrmoris/procuretrace)
 
-### LocalScript AI Agent — Offline LLM Agent for Lua Scripts
+**Evidence-grounded verification for web procurement agents.**
 
-**Repository:** [Ultramind-67/lua-ai-agent](https://github.com/Ultramind-67/lua-ai-agent)
+The project checks exact product identity, mandatory specifications, provenance, and whether the agent should confirm or abstain.
 
-A local agent system for generating, validating, and iteratively improving Lua scripts for a LowCode platform.
+**Highlights**
 
-The project was developed for an isolated environment: the system works without internet access and without APIs from external LLM providers.
+- exact-confirmation F1: **72.7% → 80.0%**
+- selective accuracy: **82.9% → 88.4%**
+- range-crossing errors: **3.1% → 0%**
+- frozen 60-page evaluation set
 
-Main components:
+</td>
+<td width="33%" valign="top">
 
-- local inference via Ollama;
-- Qwen2.5-Coder 7B with 4-bit quantization;
-- LangGraph pipeline;
-- syntax checking with `luac`;
-- static analysis with `luacheck`;
-- self-reflection loop for fixing errors;
-- lightweight RAG based on keyword scoring;
-- FastAPI backend and simple web interface;
-- Docker Compose launch.
+### 📉 [SplitShift](https://github.com/stavrmoris/splitshift)
 
-**Stack:** Python, FastAPI, LangGraph, Ollama, Qwen2.5-Coder, Lua, luac, luacheck, Docker.
+**Diagnosing shortcut learning and evaluation failure under distribution shift.**
 
----
+A postmortem of an ad-classification system whose initial metrics did not survive cleaner validation.
 
-### CdekStart RAG Agent — Contextual RAG Bot
+**Highlights**
 
-**Repository:** [stavrmoris/cdek_rag_bot](https://github.com/stavrmoris/cdek_rag_bot)
+- clean random CV F1: **0.559**
+- GroupKFold F1: **0.552**
+- cue ablation F1: **0.505**
+- similarity and leakage analysis
 
-A RAG chatbot service for consulting users about international internship rules.  
-The project is built with FastAPI, LangGraph, and ChromaDB.
-
-Implemented:
-
-- stateful dialogue memory via `thread_id`;
-- RAG search over a local vector database;
-- metadata filtering by location;
-- smart routing between answering and asking clarifying questions;
-- support for different LLMs through an adapter;
-- Docker Compose launch.
-
-**Stack:** Python, FastAPI, LangGraph, LangChain, ChromaDB, HuggingFace Embeddings, Docker.
+</td>
+</tr>
+</table>
 
 ---
 
-### Demand Forecasting ML Service
+## 🧩 What connects these projects?
 
-**Repository:** [stavrmoris/LSTM_m5_NSU](https://github.com/stavrmoris/LSTM_m5_NSU)
+| Project | Failure mode | Research question |
+|---|---|---|
+| **Guardian of Truth** | A fluent answer may still be factually wrong | Can internal representations expose hallucinations? |
+| **ProcureTrace** | An agent may confidently confirm an unsupported product | Can every decision remain attached to page evidence? |
+| **SplitShift** | A strong validation score may not generalize | Which shortcuts and distribution shifts inflate performance? |
 
-An educational NSU project focused on building an ML service for product demand forecasting using sales time series.
-
-The project implements a complete small ML-service pipeline:
-
-- data preparation;
-- `mean-28` baseline;
-- Global LSTM with PyTorch;
-- evaluation on a holdout period;
-- FastAPI backend for inference;
-- React dashboard for forecast visualization;
-- Docker Compose launch.
-
-**Result:**
-
-- MAE improvement of about 16.8% compared to the baseline.
-
-**Stack:** Python, PyTorch, LSTM, pandas, scikit-learn, FastAPI, React, Docker.
+Together, they form one research direction: **measuring and improving the reliability of AI systems beyond demo quality and headline metrics.**
 
 ---
 
-### Orange Pi 6 Plus Alt Linux NPU — ML Inference on NPU
+## 🛠️ Other engineering work
 
-**Repository:** [Ultramind-67/orange-pi-6-plus-alt-linux-npu](https://github.com/Ultramind-67/orange-pi-6-plus-alt-linux-npu)
-
-A project for the NSU AI Center at the intersection of ML inference, ARM64 Linux, and edge AI.  
-The goal was to run a neural network model on Orange Pi 6 Plus under Alt Linux using the hardware NPU.
-
-Covered in the project:
-
-- running Alt Linux on an ARM64 board;
-- working with the vendor CIX/Orange Pi BSP kernel;
-- configuring NPU drivers;
-- CIX NOE SDK;
-- Python environment for inference;
-- ONNX Runtime Zhouyi;
-- running ResNet50 via the hardware NPU.
-
-**Stack:** Alt Linux, ARM64, Linux kernel, CIX NOE SDK, ONNX Runtime Zhouyi, Python, Conda, NPU inference.
+- **LocalScript AI Agent** — offline Qwen-based agent for generating and validating Lua scripts in an isolated environment.
+- **Orange Pi 6 Plus NPU** — neural-network inference on ARM64 Linux using a hardware NPU.
+- **Demand Forecasting Service** — PyTorch LSTM, FastAPI backend, React dashboard, and Docker deployment.
+- **Dion Background Lab** — browser-based real-time person segmentation and background replacement.
+- **RAG and agent systems** — FastAPI, LangGraph, ChromaDB, local and hosted LLMs, tool use, and memory.
 
 ---
 
-### imgproc — Image Processing Library in C
+## 🏆 Achievements
 
-**Repository:** [stavrmoris/imgproc](https://github.com/stavrmoris/imgproc)
-
-An educational NSU project: a command-line application and C library for basic image processing.
-
-Implemented:
-
-- median filter;
-- Gaussian blur;
-- Sobel edge detection;
-- sharpen;
-- arbitrary 2D convolution;
-- CLI interface;
-- Makefile build;
-- unit tests.
-
-**Stack:** C, Makefile, stb_image, image processing, convolution filters, unit tests.
+- **2nd place** — Purple Hack 2026, Avito track
+- **3rd place** — T1 Hackathon
+- **3rd place** — Cloud.ru Hackathon
+- Prize-winning work in factual hallucination detection and AI-agent systems
 
 ---
 
-### Dion Background Lab — Real-time Computer Vision in Browser
+## ⚙️ Research and engineering stack
 
-**Repository:** [Ultramind-67/solution_T1_hack](https://github.com/Ultramind-67/solution_T1_hack)
+**Research:** LLM evaluation, representation analysis, hallucination detection, agent reliability, distribution shift, ablations, error analysis
 
-A hackathon prototype for dynamic background replacement in video calls.  
-The application works in the browser: it gets webcam video, segments the person, and renders the final frame through Canvas.
+**ML:** Python, PyTorch, scikit-learn, CatBoost, pandas, PCA, TF-IDF, feature engineering
 
-Implemented:
+**LLM systems:** LangGraph, LangChain, RAG, embeddings, reranking, MCP, local LLM inference
 
-- webcam video processing;
-- person segmentation with TensorFlow.js;
-- background replacement modes;
-- blur, images, and video backgrounds;
-- FPS counter;
-- Docker/nginx launch.
-
-**Result:** 3rd place at T1 Hackathon.
-
-**Stack:** JavaScript, TensorFlow.js, Canvas API, HTML, CSS, Docker, nginx.
+**Engineering:** FastAPI, Django, Docker, Docker Compose, pytest, Git, Linux, React
 
 ---
 
-### AI Procurement Agent — Multi-agent Procurement System
+## 🎯 Currently interested in
 
-**Repository:** [Ultramind-67/hack_mcp_cloud_ru](https://github.com/Ultramind-67/hack_mcp_cloud_ru)
-
-A hackathon multi-agent solution for automating procurement workflows.  
-The system combines LLMs, RAG memory, web search, supplier website scraping, logistics calculation, and reporting.
-
-Implemented:
-
-- MCP architecture;
-- ReAct-style agent loop;
-- supplier search;
-- website analysis via Jina AI;
-- RAG memory with ChromaDB;
-- integration with DPD SOAP/XML API;
-- CSV report generation;
-- Streamlit dashboard.
-
-**Result:** 3rd place at Cloud.ru Hackathon.
-
-**Stack:** Python, FastMCP, AsyncIO, ChromaDB, Qwen, Jina AI, SOAP/XML, Streamlit, Docker.
+- research internships and laboratories;
+- reliable LLM and agent systems;
+- applied AI research with real-world failure modes;
+- collaborations where experimental rigor and engineering both matter.
 
 ---
 
-## Map of Interests
-
-```mermaid
-mindmap
-  root((AI / ML))
-    Applied ML
-      Classification
-      Feature engineering
-      Time-series
-      Model evaluation
-    LLM Systems
-      RAG
-      Agents
-      LangGraph
-      Local LLM
-      Hallucination detection
-    Engineering
-      FastAPI
-      Docker
-      Testing
-      API
-    Computer Vision
-      TensorFlow.js
-      Image processing
-      Convolution
-    Edge AI
-      NPU inference
-      ARM64
-      ONNX Runtime
-```
-
----
-
-## Current Interests
-
-- ML Engineering;
-- LLM / RAG Engineering;
-- AI agents;
-- model evaluation;
-- inference services;
-- applied ML;
-- projects at the intersection of models and backend engineering.
-
----
-
-## Contacts
+## 📬 Contact
 
 - Telegram: [@stavrmoris](https://t.me/stavrmoris)
-- Email: `s.mariskin@g.nsu.ru`
+- Email: [s.mariskin@g.nsu.ru](mailto:s.mariskin@g.nsu.ru)
 - GitHub: [github.com/stavrmoris](https://github.com/stavrmoris)
